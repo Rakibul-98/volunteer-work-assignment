@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../logos/Group 1329.png';
 import './NavBar.css'
 
@@ -11,22 +12,22 @@ const NavBar = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item active">
-                                <a className="nav-link" href="/home">Home <span className="sr-only">(current)</span></a>
+                                <Link className="nav-link" to="/home">Home <span className="sr-only">(current)</span></Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/donation">Donation</a>
+                                <Link className="nav-link" to="/donation">Donation</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/events">Events</a>
+                                <Link className="nav-link" to="/events">Events</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/blog">Blog</a>
+                                <Link className="nav-link" to="/blog">Blog</Link>
                             </li>
                             <li className="nav-button">
-                                <a href="/registration"><button className="btn btn-primary button">Register</button></a>
+                                <Link to="/registration"><button className="btn btn-primary button">Register</button></Link>
                             </li>
                             <li className="nav-button">
-                                <a href="/admin"><button className="btn btn-dark button">Admin</button></a>
+                                <Link to="/admin"><button className="btn btn-dark button">Admin</button></Link>
                             </li>
                         </ul>
                     </div>

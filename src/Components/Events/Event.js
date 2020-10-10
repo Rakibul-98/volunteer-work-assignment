@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Event = ({event}) => {
-    console.log(event)
+
+
     return (
       <div style={{marginBottom:'30px'}} className="col-md-3">
-        <a href="/login">
+        <Link to="/registration">
           <img style={{height:'300px'}} src={require(`../../images/${event.img}`)} alt=""/>
-        </a>
+        </Link>
         <h4 style={{textAlign:'center'}}>{`${event.name}`}</h4>
       </div>
     );

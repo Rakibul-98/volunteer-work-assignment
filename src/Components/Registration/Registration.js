@@ -1,8 +1,12 @@
 import { TextField } from '@material-ui/core';
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import Logo from '../../logos/Group 1329.png'
 
 const Registration = () => {
+
+    const [loggedInUser] = useContext(UserContext);
 
     const imgStyle={
         height:'100%',
@@ -38,18 +42,23 @@ const Registration = () => {
         borderRadius:'0'
     }
 
+    const handleSubmit = () => {
+        
+    }
+
     return (
+
         <div>
-            <img style={imgStyle} src={Logo} alt=""/>
+            <Link to="/"><img style={imgStyle} src={Logo} alt=""/></Link>
             <div style={boxStyle}>
                <h4 style={{marginLeft:'20px',marginTop:'20px'}}>Register as a volunteer</h4>
                <form className='reg-form' action="">
-                <TextField style={inputStyle}  id="standard" label="Full Name" />
-                <TextField style={inputStyle}  id="standard" label="User-name or Email" />
+                <TextField style={inputStyle}  id="standard" label="Full Name" value={loggedInUser.name} />
+                <TextField style={inputStyle}  id="standard" label="User-name or Email" value={loggedInUser.email} />
                 <TextField style={inputStyle}  id="standard" label="Date" />
                 <TextField style={inputStyle} id="standard" label="Description" />
-                <TextField style={inputStyle} id="standard" label="Standard" />
-                <button className="btn btn-primary" style={buttonStyle} type="submit">Registration</button>
+                <TextField style={inputStyle} id="standard" label="Event name" />
+                <Link to='/addedEvents'><button onClick={handleSubmit} className="btn btn-primary" style={buttonStyle} type="submit">Registration</button></Link>
                </form>
             </div>
         </div>
