@@ -105,6 +105,9 @@ const volunteerEvents = [
 ]
 
 const Home = () => {
+
+
+
     return (
         <div className="container">
             <NavBar/>

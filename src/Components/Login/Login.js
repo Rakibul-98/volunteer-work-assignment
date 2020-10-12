@@ -40,12 +40,23 @@ const Login = () => {
             }
             setUser(signedInUser);
             setLoggedInUser(signedInUser);
+            storeAuthToken();
             history.replace(from);
         })
         .catch(err=>{
             console.log(err)
             console.log(err.message)
         })
+    }
+
+    const storeAuthToken = () =>{
+        firebase.auth().currentUser.getIdToken(true)
+        .then(function(idToken) {
+            sessionStorage.setItem('token', idToken);
+          })
+          .catch(function(error) {
+
+          });
     }
 
     const imgStyle={
@@ -67,12 +78,6 @@ const Login = () => {
         border:'1px solid black',
         borderRadius:'3px'
     }
-    // .alter-btn{
-    //     border: 1px solid grey;
-    //     ;
-    //     ;
-    //     ;
-    // }
 
     const buttonStyle={
         marginTop:'10px',

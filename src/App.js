@@ -10,7 +10,6 @@ import Login from './Components/Login/Login';
 import Registration from './Components/Registration/Registration';
 import NoMatch from './Components/NoMatch/NoMatch';
 import Admin from './Components/Admin/Admin';
-import AddEvent from './Components/Events/AddEvent';
 import AddedEvents from './Components/Events/AddedEvents';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
@@ -40,9 +39,6 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/admin">
               <Admin/>
-            </PrivateRoute>
-            <PrivateRoute path="/addEvent">
-              <AddEvent/>
             </PrivateRoute>
             <Route exact path="/">
               <Home />
